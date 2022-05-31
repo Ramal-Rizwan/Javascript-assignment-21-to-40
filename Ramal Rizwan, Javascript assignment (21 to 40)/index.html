@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--Assignment # 21-25 String Methods-->
+    <!--1. Write a program that takes two user inputs for first and 
+last name using prompt and merge them in a new variable 
+titled fullName. Greet the user using his full name.-->
+<script>
+    var firstName=prompt("What is your first name");
+    var lastName=prompt("What is your first name");
+    var fullName=firstName+lastName;
+    alert("welcome " + fullName);
+</script>
+
+<!--2. Write a program to take a user input about his favorite 
+mobile phone model. Find and display the length of user 
+input in your browser-->
+<script>
+var mobile=prompt("enter your favorite mobile phone model");
+        var len = mobile.length;
+document.write("my favourite phone is " + mobile + "<br>");
+document.write("Lenght of string  " + len);
+</script>
+<!--3. Write a program to find the index of letter “n” in the word
+“Pakistani” and display the result in your browser .-->
+
+       <script>
+        var word= "pakistani";
+        var result  = word.indexOf("n");
+        document.write( "string: Pakistani" + "<br>");
+    document.write("Index of 'n' :  " + result);
+  </script>
+
+<!--4. Write a program to find the last index of letter “l” in the 
+word “Hello World” and display the result in your browser-->
+<script>
+    var word= "Hello World";
+    var result=word.lastIndexOf("l");
+    document.write( "string: Hello World " + "<br>");
+  document.write("Index of 'l' :  " + result);
+</script>
+<!--5. Write a program to find the character at 3rd index in the 
+word “Pakistani” and display the result in your browser.-->
+<script>
+    var word= "Pakistani";
+    var result=word.charAt(3);
+    document.write( "String: Pakistani " + "<br>");
+  document.write("character at index 3 :  " + result);
+</script>
+<!--6. Repeat Q1 using string concat() method.-->
+<script>
+    var firstName=prompt("What is your first name");
+    var lastName=prompt("What is your first name");
+    var fullName=firstName.concat(lastName);
+   alert("welcome " + fullName);
+</script>
+<!--7. Write a program to replace the “Hyder” to “Islam” in the 
+word “Hyderabad” and display the result in your browser.-->
+<script>
+    var city="Hyderabad";
+    var newCity = city.replace("Hyderabad", "Islamabad");
+    document.write( city + "<br>" );
+    document.write("After Replacement: " + newCity);
+  </script>
+<!--8. Write a program to replace all occurrences of “and” in the
+string with “&” and display the result in your browser.
+var message = “Ali and Sami are best friends. They play cricket and 
+football together.”;-->
+<script>
+    var message= "Ali and Sami are best friends. They play cricket and football together.";
+    var newMessage = message.replaceAll("and", "&");
+    document.write( message + "<br>" );
+    document.write("After Replacement: "+ newMessage);
+    </script>
+
+<!--9. Write a program that converts a string “472” to a number 
+472. Display the values & types in your browser.-->
+<script>
+    var value=parseInt("472");
+    document.write("value= "+ value+ "<br>");
+    document.write("Type: String" + "<br>");
+    document.write("value= "+ value+ "<br>");
+    document.write("Type: Number "+"<br>");
+     </script>
+<!--10. Write a program that takes user input. Convert and 
+show the input in capital letters.-->
+<script>
+    var input=prompt("enter a word");
+    var UpperCase=input.toUpperCase(input);
+    document.write("user input: "+ input+ "<br>");
+    document.write("Upper case:  "+ UpperCase+ "<br>");
+      </script>
+<!--11. Write a program that takes user input. Convert and 
+show the input in title case.-->
+<script>
+    var input=prompt("enter a word");
+    function titleCase(input) {
+        return input.toLowerCase().split(' ').map(function(input) {
+          return (input.charAt(0).toUpperCase() + input.slice(1));
+        }).join(' ');
+   
+    document.write("user input: "+ input+ "<br>");
+    document.write("Upper case:  "+ titleCase + "<br>");
+      
+    }
+    function convertFirstLetterToUpperCase(str) {
+var splitStr = str.toLowerCase().split(' ');
+for (var i = 0; i < splitStr.length; i++) {
+   splitStr[i] = splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1);     
+}
+
+return splitStr.join(' '); 
+}
+
+console.log(convertFirstLetterToUpperCase("let's make it capitAL"));
+    </script>
+
+<!--12. Write a program that converts the variable num to 
+string.
+var num = 35.36 ;
+ Remove the dot to display “3536” display in your browser.-->
+
+ <script>
+    var num = 35.36;
+ var string=num.toString();
+ var string1=string.slice(3,5);
+    document.write("num= "+ num+ "<br>");
+    document.write("string= "+ string1 + "<br>");
+     </script>
+<!--13. Write a program to take user input and store username 
+in a variable. If the username contains any special symbol 
+among [@ . , !], prompt the user to enter a valid username. 
+For character codes of [@ .
+Note:
+ASCII code of ! is 33
+ASCII code of , is 44
+ASCII code of . is 46
+ASCII code of @ is 64
+-->
+<script>
+  var userName=prompt("Enter your Input: ");
+checkValidName(userName);
+function checkValidName(un)
+{
+ var message;
+ var split=[];
+ var arr=[];
+ for(var i=0;i<un.length;i++)
+ {
+     split[i]=un.split("&nbsp;");
+     arr[i]=un.charCodeAt(i);
+     if(arr[i]!=33||arr[i]!=44||arr[i]!=46||arr[i]!=64)
+     {
+             message="Correct User Name";
+     }
+     while(arr[i]==33||arr[i]==44||arr[i]==46||arr[i]==64)
+     {
+         alert("please enter a valid userName");                                                                                                                   
+         userName=prompt("Enter your Input: ");
+         split[i]=un.split("&nbsp;");
+         arr[i]=un.charCodeAt(i);
+         if(arr[i]!=33||arr[i]!=44||arr[i]!=46||arr[i]!=64)
+         {
+             message="correct user name";
+             break;
+         }
+     }
+
+ }
+ alert(message);
+}
+</script>
+<!--14. You have an array
+A = [cake”, “apple pie”, “cookie”, “chips”, “patties”]
+Write a program to enable “search by user input” in an 
+array. After searching, prompt the user whether the given 
+item is found in the list or not.
+Note: Perform case insensitive search. Whether the user 
+enters cookie, Cookie, COOKIE or coOkIE, program 
+should inform about its availability.-->
+<script>
+ var items=["cake", "apple pie", "cookie", "chips", "patties"];
+var input=prompt("what do you like to eat").toUpperCase();
+
+for(var i=0; i>items.length;i++){
+if(input=== items[i]){
+    var bool=true;
+}
+}
+if(bool=true){
+document.write(input + " is available");
+}
+else {
+document.write (input + " is not available");
+}
+     </script>
+
+
+
+<!--16. Write a program to convert the following string to an 
+array using string split method.
+var university = “University of Karachi”;
+Display the elements of array in your browser.-->
+<script>
+ var university = ("university of Karachi");
+  alert(university.split(' '));
+  </script>
+  
+<!--17. Write a program to display the last character of a user 
+input.-->
+<script>
+ var str=prompt("enter a word");
+  character = str.slice(-1);;
+  document.write(character);
+  </script>
+<!--18. You have a string “The quick brown fox jumps over the 
+lazy dog”. Write a program to count number of 
+occurrences of word “the” in given string.-->
+<script>
+  var temp = "the quick brown fox jumps over the lazy dog";
+var count = (temp.match(/the/g) || []).length;
+document.write(' number of occurrences of word “the” in given string is '+count);
+</script>
+
+<!--Assignment # 26-30 MATH METHODS-->
+
+<!--1. Write a program that takes a positive integer from user &
+display the following in your browser.
+a. number
+b. round off value of the number
+c. floor value of the number
+d. ceil value of the number-->
+<script>
+  var input = parseInt(prompt("Enter a number: "));
+  document.write("the number is" + input);
+ if (input > 0) {
+  num=Math.round(input);
+ document.write("the round off number is" + num);
+ num3=Math.ceil(input);
+ document.write("the ceil number is" + num3); 
+     num2=Math.floor(input);
+     document.write("the floor number is"+ num2);
+    }
+ 
+ else {
+      document.write(input + " is not a posiyive interger");
+ }
+   </script>
+
+
+<!--2. Write a program that takes a negative floating point
+number from user & display the following in your browser.
+a. number
+b. round off value of the number
+c. floor value of the number
+d. ceil value of the number-->
+<script>
+ 
+  var input = parseFloat(prompt("Enter a number: "));
+  document.write("the number is" + input);
+ if (input < 0) {
+  
+     num=Math.round(input);
+ document.write("the round off number is" + num);
+ num3=Math.ceil(input);
+ document.write("the ceil number is" + num3); 
+     num2=Math.floor(input);
+     document.write("the floor number is"+ num2);
+    }
+ 
+ else {
+      document.write(input + " is not a negative float");
+ }
+   </script>
+
+
+<!--3. Write a program that displays the absolute value of a 
+number.
+E.g. absolute value of -4 is 4 & absolute value of 5 is 5
+-->
+<script>
+var x =parseInt(prompt("enter a number"));
+num = Math.abs(x); 
+document.write("absolute value of " + x + " is "+ num);
+</script>
+
+<!--4. Write a program that simulates a dice using random() 
+method of JS Math class. Display the value of dice in your 
+browser.:-->
+<script>
+  var diceRoll = Math.floor( Math.random() * 6 ) +1;
+  document.write('You rolled a ' + diceRoll);
+  </script>
+
+<!--5. Write a program that simulates a coin toss using random()
+method of JS Math class. Display the value of coin in your
+browser-->
+
+<script>
+  var head = 1;
+  var tail = 2;
+  
+  var toss = Math.random() * 2;
+  var floor = Math.floor(toss)
+  if(floor === 0){
+      document.write("1 <br> Random Coin Value: Head")
+  } else if(floor === 1)
+  {
+      document.write("2 <br> Random Coin Value: Tails")
+  }
+  </script>
+<!--6. Write a program that shows a random number between 1 
+and 100 in your browser.-->
+<script>
+  var   num = Math.random();
+ var result = Math.floor(num * 100) ;
+document.write("the number is " + result);
+</script>
+
+<!--7. Write a program that asks the user about his weight. Parse 
+the user input and display his weight in your browser. 
+Possible user inputs can be:
+a. 50
+b. 50kgs
+c. 50.2kgs
+d. 50.2kilograms-->
+<script>
+  var weight=parseFloat(prompt("enter your weight"));
+document.write("Your weight is " +weight + "kgs");
+</script>
+
+<!--8. Write a program that stores a random secret number from 
+1 to 10 in a variable. Ask the user to input a number 
+between 1 and 10. If the user input equals the secret 
+number, congratulate the user.-->
+<script>
+  const num = Math.ceil(Math.random() * 10);
+console.log(num);
+ const gnum = prompt('Guess the number between 1 and 10');
+ if (gnum == num){
+   document.write('congratulation your no. is Matched'+ "<br>");}
+  else{
+   document.write('Not matched, the number was '+ gnum);
+     }
+</script>
+
+<!--Assignment # 31-34 DATE METHODS-->
+
+<!--1. Write a program that displays current date and time in 
+your browser.-->
+<script>
+    var date= new Date();
+    document.write(date);
+      </script>
+<!--2. Write a program that alerts the current month in words. 
+For example December.-->
+<script>
+    let date = new Date(); 
+let longMonth = date.toLocaleString('en-us', { month: 'long' }); 
+document.write(longMonth);
+  </script>
+
+<!--3. Write a program that alerts the first 3 letters of the current
+day, for example if today is Sunday then alert will show 
+Sun.-->
+<script>
+    var today = new Date();
+  var day = today.getDay();
+  var daylist = ["Sun","Mon","Tues","Wed ","Thurs","Fri","Sat"];
+  alert("Today is : " + daylist[day] + ".");
+    </script>
+
+<!--4. Write a program that displays a message “It’s Fun day” if 
+its Saturday or Sunday today.-->
+<script>
+var dayOfWk=prompt("enter a day");
+switch(dayOfWk) {
+ case "Saturday" :
+ alert("It's fun day");
+break;
+ case "Sunday" :
+ alert("It's fun day");
+ break;
+ case "Friday" :
+ alert("It's not a fun day");
+break;
+case "Thursday" :
+ alert("It's not a fun day");
+break;
+case "wednesday" :
+ alert("It's not a fun day");
+break;
+case "tuesday" :
+ alert("It's not a fun day");
+break;
+case "monday" :
+ alert("It's not a fun day");
+break;
+ default :
+ alert("It's not a fun day");
+ }
+
+    </script>
+
+<!--5. Write a program that shows the message “First fifteen 
+days of the month” if the date is less than 16th of the month 
+else shows “Last days of the month”.-->
+<script>
+  var today = new Date();
+  document.write("today's date " + today+ " <br>");
+if(today>=15)
+{
+  document.write("First fifteen days of the month")
+}
+else
+{
+  document.write("Last days of the month")
+}
+</script>
+
+<!--6. Write a program that determines the minutes since 
+midnight, Jan. 1, 1970 and assigns it to a variable that 
+hasn't been declared beforehand. Use any variable you like 
+to represent the Date object.-->
+<script>
+    var todayDate = new Date();
+var Todaymilli = todayDate.getTime();
+var todayMin = todayDate.getMinutes();
+var diff = Todaymilli - todayMin;
+var diffMin = diff/(1000*60*60);
+var accurateMin = Math.floor(diffMin);
+
+ 
+document.write("Current Date: " + todayDate);
+document.write("<br> Elapsed milliseconds since midnight, Jan 1, 1970: " + Todaymilli);
+document.write("<br> Elapsed minutes since midnight, Jan 1, 1970: " + accurateMin);
+    </script>
+<!--7. Write a program that tests whether it's before noon and 
+alert “Its AM” else “its PM”.-->
+
+<script>
+    var time = new Date();
+   document.write(
+     time.toLocaleString('en-US', { hour: 'numeric', hour12: true })
+   ); 
+       </script>
+<!--8. Write a program that creates a Date object for the last day 
+of the last month of 2020 and assigns it to variable named 
+laterDate.-->
+<p id="demo"></p>
+<script>
+    const laterDate = new Date("DEC 31, 2020 00:00:00");
+    laterDate.setDate(31);
+    document.getElementById("demo").innerHTML = laterDate;
+   
+    </script>
+<!--9. Create a date object of the starting date of this Ramadan 
+and alert the number of days past since 1st Ramadan?
+Note: 1st Ramadan was on June 18, 2015-->
+<script>
+  var today = new Date();
+ var ramzan_day = new Date("June 18, 2015");
+ var mstoday = today.getTime();
+ var msToday = today.getTime();
+var ms_ram_day = ramzan_day.getTime();
+var msDiff =msToday - ms_ram_day; 
+var dDiff = Math.floor(msDiff / (1000 * 60 * 60 * 24));
+
+
+document.write( dDiff + " days have passed since 1st Ramazan, 2015 ") ;
+</script>
+
+<!--10. Write a program that displays in your browser the 
+seconds that elapsed between the reference date and the 
+beginning of 2015.-->
+<script>
+  var today = new Date();
+ var refday = new Date("december 5, 2015 22:50:16");
+ var mstoday = today.getTime();
+ var msToday = today.getTime();
+var ms_refday = refday.getTime();
+var msDiff = ms_refday - msToday; 
+document.write("On reference date "+ refday+ msDiff + " seconds had passed since beginning of 2015 ") ;
+</script>
+<!--11. Create a Date object for the current date and time. 
+Extract the hours, reset the date object an hour ahead and 
+finally display the date object in your browser.-->
+<script>
+  var current = new Date();
+  document.write("Current date " + current +" <br>");
+  var dt = new Date();
+  dt.setHours( dt.getHours() - 1 );
+  document.write("1 hour ago it was " + dt );
+  
+   </script>
+<!--12. Write a program that creates a date object and show the 
+date in an alert box that is reset to 100 years back?-->
+<script>
+  var current = new Date();
+  document.write("Current date: " + current +" <br>");
+  var year = new Date();
+  year.setFullYear( year.getFullYear() - 100 );
+  document.write("100 years back, it was " + year );
+  
+   </script>
+
+<!--13. Write a program to ask the user about his age. Calculate 
+and show his birth year in your browser.-->
+<script>
+    var currentAge=prompt("Enter your age");
+    var year= new Date().getFullYear()-currentAge;
+    document.write("your age is "+ currentAge+"<br>");
+    document.write("your year is " + year)
+     
+      </script>
+<!--14. Write a program to generate your K-Electric bill in your
+browser. All the amounts should be rounded off to 2 
+decimal places. Display the following fields:
+a. Customer Name
+b. Current Month
+c. Number of units
+d. Charges per unit
+e. Net Amount Payable (within Due Date)
+f. Late Payment Surcharge
+g. Gross Amount Payable (after Due Date)
+Where,
+Net Amount Payable (within Due Date) = Number of units * Charges per unit
+& Gross Amount Payable (after Due Date) = Net Amount + Late Payment Surcharge-->
+
+<h1>K-Electric Bill</h1>
+<script>
+var customer_Name="RAMAL";
+var month="FEB";
+var number_of_units=410;
+var charges_per_units=16;
+var late_Payment_Surcharge=350;
+var net_Amount_Payable =number_of_units * charges_per_units;
+var gross_Amount_Payable= net_Amount_Payable+ late_Payment_Surcharge;
+document.write("customer Name: "+ customer_Name+"<br>");
+document.write("month "+month +"<br>");
+document.write(" Number of units" + number_of_units+ "<br>");
+document.write(" Charges per unit " + charges_per_units+ "<br>");
+document.write("Net Amount Payable (within Due Date)= "+ net_Amount_Payable+ "<br>");
+document.write( "Late Payment Surcharge= " + late_Payment_Surcharge +"<br>");
+document.write( "Gross Amount Payable (after Due Date)= "+gross_Amount_Payable+ "<br>");
+
+</script>
+<!--Assignment # 35-38 function-->
+<!--1. Write a function that displays current date & time in your 
+browser.-->
+<script>
+  function display_date_time(){
+    var now=new Date();
+    document.write(Date())
+  }
+ 
+  display_date_time();
+ </script>
+<!--2. Write a function that takes first & last name and then it 
+greets the user using his full name.-->
+<script>
+var firstName=prompt("enter your first name");
+var lastName=prompt("enter your last name") ;
+function Greetuser(){
+  alert("welcome "+ firstName + " "+ lastName);
+}
+Greetuser();
+</script>
+<!--3. Write a function that adds two numbers (input by user) 
+and returns the sum of two numbers.-->
+
+<script>
+  var num1=parseInt(prompt("enter your first number"));
+  var num2=parseInt(prompt("enter your second number"));
+  function sum(){
+     var add =num1 + num2;
+    document.write("sum of two numbers are " + add);
+  }
+  sum();
+  </script>
+
+<!--4. Calculator:
+Write a function that takes three arguments num1, num2 
+& operator & compute the desired operation. Return and 
+show the desired result in your browser.-->
+<script>
+  var num1=parseInt(prompt("enter a numbrer"));
+ var num2=parseInt(prompt("enter a numbrer"));
+ var operator=parseInt(prompt("enter a operator"));
+
+ function calculator(num1,num2,operator){
+return num1 - num2;
+
+}
+document.write( calculator());
+</script>
+
+<!--5. Write a function that squares its argument.-->
+<script>
+  var num=parseInt(prompt("enter a numbrer"));
+  function square(num){
+ return num * num;
+
+}
+document.write( square(num));
+</script>
+<!--6. Write a function that computes factorial of a number.-->
+<script>
+  function factorial(n){
+  let answer = 1;
+  if (n == 0 || n == 1){
+    return answer;
+  }else{
+    for(var i = n; i >= 1; i--){
+      answer = answer * i;
+    }
+    return answer;
+  }  
+}
+let n = 4;
+answer = factorial(n)
+alert("The factorial of " + n + " is " + answer);
+</script>      
+<!--7. Write a function that take start and end number as inputs 
+& display counting in your browser.-->
+<script>
+  var startNum=prompt("enter a start number");
+  var endNum=prompt("enter end number");
+  for (var i = startNum ;i < endNum ; i++){
+document.write(i + "<br>");
+}
+</script>
+<!--8. Write a nested function that computes hypotenuse of a 
+right angle triangle. 
+Hypotenuse2 = Base2 + Perpendicular2
+Take base and perpendicular as inputs.
+Outer function : calculateHypotenuse()
+Inner function: calculateSquare()-->
+<script>
+  var base=parseInt(prompt("enter a base"));
+  var perpendicular =parseInt(prompt("enter a Perpendicular"));
+function calculateHypotenuse()
+{
+function calculateSquare(side){
+return side*side;
+}
+return Math.sqrt(calculateSquare(base)+calculateSquare(perpendicular));
+}
+document.write("Hypotenuse of triangle is :"+calculateHypotenuse());
+</script>
+
+<!--9. Write a function that calculates the area of a rectangle.
+ A = width * height
+ Pass width and height in following manner:
+i. Arguments as value
+ii. Arguments as variables-->
+
+<!--Arguments as variables-->
+<script>
+  var length = prompt("Enter a whole number for the length of your rectangle.");
+   var width = prompt("Enter a whole number for the width of your rectangle.");
+   function area(length, width) {
+       return length * width;
+   }
+  
+   
+   document.writeln('The area of your rectangle is ' + area(length, width));
+
+</script>
+<!--Arguments as value-->
+<script>
+        function area(length, width) {
+            return length * width;
+        }
+       
+        
+        document.writeln('The area of your rectangle is ' + area(4, 6));
+
+</script>
+<!--10. Write a JavaScript function that checks whether a passed 
+string is palindrome or not?
+A palindrome is word, phrase, or sequence that reads the same backward as 
+forward, e.g., madam.-->
+<script>
+
+  function checkPalindrome(string) {
+      const len = string.length;
+      for (let i = 0; i < len / 2; i++) {
+
+          if (string[i] !== string[len - 1 - i]) {
+              return 'It is not a palindrome';
+          }
+      }
+      return 'It is a palindrome';
+  }
+
+  const string = prompt('Enter a string: ');
+  const value = checkPalindrome(string);
+  
+  document.write(value);
+</script>
+<!--11. Write a JavaScript function that accepts a string as a 
+parameter and converts the first letter of each word of the 
+string in upper case. 
+EXAMPLE STRING : 'the quick brown fox'
+EXPECTED OUTPUT : 'The Quick Brown Fox'-->
+<script>
+  function uppercase(str)
+  {
+  var array1 = str.split(' ');
+  var newarray1 = [];
+  
+  for(var x = 0; x < array1.length; x++){
+  newarray1.push(array1[x].charAt(0).toUpperCase()+array1[x].slice(1));
+  }
+  return newarray1.join(' ');
+  }
+  document.write(uppercase("the quick brown fox"));
+  </script>
+<!--12. Write a JavaScript function that accepts a string as a 
+parameter and find the longest word within the string. 
+EXAMPLE STRING : 'Web Development Tutorial'
+EXPECTED OUTPUT : 'Development-->
+<script>
+  function find_longest_word(str)
+{
+var array1 = str.match(/\w[a-z]{0,}/gi);
+var result = array1[0];
+
+for(var x = 1 ; x < array1.length ; x++)
+{
+if(result.length < array1[x].length)
+{
+result = array1[x];
+}
+}
+return result;
+}
+document.write(find_longest_word('Web Development Tutorial'));
+</script>
+<!--13. Write a JavaScript function that accepts two arguments, a 
+string and a letter and the function will count the number of 
+occurrences of the specified letter within the string. 
+Sample arguments : 'JSResourceS.com', 'o'-->
+<script>
+  function char_count(str, letter) 
+{
+ var letter_Count = 0;
+ for (var position = 0; position < str.length; position++) 
+ {
+    if (str.charAt(position) == letter) 
+      {
+      letter_Count += 1;
+      }
+  }
+  return letter_Count;
+}
+
+document.write(char_count('JSResourceS.com', 'o'));
+     </script>
+<!--14. The Geometrizer
+Create 2 functions that calculate properties of a circle, using 
+the definitions here.
+Create a function called calcCircumference:
+• Pass the radius to the function.
+• Calculate the circumference based on the radius, and output 
+"The circumference is NN".
+Create a function called calcArea:
+• Pass the radius to the function.
+• Calculate the area based on the radius, and output "The area 
+is NN".
+Circumference of circle = 2πr
+Area of circle = πr2-->
+<script>
+  function calcCircumfrence(radius) {
+    var y = (Math.PI * radius) * 2;
+  document.write("The circumfrence is " + y + "." +"<br>");
+  }
+  function calcArea(radius) {
+    var x = (Math.PI * radius) * radius;
+    document.write("The area is " + x + ".");
+  }
+  
+  calcCircumfrence(10);
+  calcArea(5);
+  
+   </script>
+
+</body>
+</html>
